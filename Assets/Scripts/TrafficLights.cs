@@ -42,10 +42,17 @@ public class TrafficLights : MonoBehaviour
     void Update()
     {
         stateTimer = stateTimer -= Time.deltaTime;
-        if(stateTimer <= 5)
+        if(stateTimer < 0)
         {
-            SetState(2);
-            stateTimer = 10.0f;
+            if (state == 1)
+            {
+                SetState(0);
+            }
+            else if (state == 0)
+            {
+                SetState(1);
+            }
+            StateTimerReset();
         }
     }
 
@@ -63,7 +70,7 @@ public class TrafficLights : MonoBehaviour
             t3green.SetActive(false);
             t3red.SetActive(true);
         }
-        if(c == 2)
+        /*if(c == 2)
         {
             //red, red, green
             t1green.SetActive(false);
@@ -72,7 +79,7 @@ public class TrafficLights : MonoBehaviour
             t2red.SetActive(true);
             t3green.SetActive(true);
             t3red.SetActive(false);
-        }
+        }*/
         else
         {
             //red, green, green
@@ -83,5 +90,10 @@ public class TrafficLights : MonoBehaviour
             t3green.SetActive(true);
             t3red.SetActive(false);
         }
+    }
+
+    void StateTimerReset()
+    {
+        stateTimer = 10.0f;
     }
 }
