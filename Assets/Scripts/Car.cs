@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarRoute : MonoBehaviour
+public class Car : MonoBehaviour
 {
     public List<Transform> wps;
     public List<Transform> route;
@@ -22,16 +22,16 @@ public class CarRoute : MonoBehaviour
         wps = new List<Transform>();
         GameObject wp;
 
-        wp = GameObject.Find("CP1");
+        wp = GameObject.Find("CWP1");
         wps.Add(wp.transform);
 
-        wp = GameObject.Find("CP2");
+        wp = GameObject.Find("CWP2");
         wps.Add(wp.transform);
 
-        wp = GameObject.Find("CP3");
+        wp = GameObject.Find("CWP3");
         wps.Add(wp.transform);
 
-        wp = GameObject.Find("CP4");
+        wp = GameObject.Find("CWP4");
         wps.Add(wp.transform);
 
         initialDelay = Random.Range(2.0f, 12.0f);
@@ -87,6 +87,14 @@ public class CarRoute : MonoBehaviour
 
 
 
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            FindObjectOfType<AudioManager>().Play("Car Horn");
+        }
     }
 
     void SetRoute()

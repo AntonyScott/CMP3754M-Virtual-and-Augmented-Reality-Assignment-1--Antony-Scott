@@ -70,16 +70,6 @@ public class TrafficLights : MonoBehaviour
             t3green.SetActive(false);
             t3red.SetActive(true);
         }
-        /*if(c == 2)
-        {
-            //red, red, green
-            t1green.SetActive(false);
-            t1red.SetActive(true);
-            t2green.SetActive(false);
-            t2red.SetActive(true);
-            t3green.SetActive(true);
-            t3red.SetActive(false);
-        }*/
         else
         {
             //red, green, green
