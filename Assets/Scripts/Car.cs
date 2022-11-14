@@ -14,7 +14,7 @@ public class Car : MonoBehaviour
 
     public Rigidbody rb;
 
-    TrafficLights trafficLights;
+    //TrafficLights trafficLights;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,19 @@ public class Car : MonoBehaviour
         wp = GameObject.Find("CWP4");
         wps.Add(wp.transform);
 
-        initialDelay = Random.Range(2.0f, 12.0f);
+        wp = GameObject.Find("CWP5");
+        wps.Add(wp.transform);
+
+        wp = GameObject.Find("CWP6");
+        wps.Add(wp.transform);
+
+        wp = GameObject.Find("CWP7");
+        wps.Add(wp.transform);
+
+        wp = GameObject.Find("CWP8");
+        wps.Add(wp.transform);
+
+        initialDelay = Random.Range(2.0f, 5.0f);
         transform.position = new Vector3(0.0f, -1.5f, 0.0f);
 
         rb = GetComponent<Rigidbody>();
@@ -92,20 +104,43 @@ public class Car : MonoBehaviour
     void SetRoute()
     {
         //randomise the next route
-        routeNumber = Random.Range(0, 4);
+        routeNumber = Random.Range(0, 5);
 
         //set the route waypoints
         if (routeNumber == 0) 
             route = new List<Transform> 
             { 
                 wps[0], 
-                wps[1] 
+                wps[1],
+                wps[2],
+                wps[3],
             };
-        else if (routeNumber == 2) 
+        if (routeNumber == 1) 
             route = new List<Transform> 
             { 
-                wps[2], 
-                wps[3] 
+                wps[4], 
+                wps[5],
+            };
+        if (routeNumber == 2)
+            route = new List<Transform>
+            {
+                wps[4],
+                wps[5],
+                wps[1]
+            };
+        if (routeNumber == 3)
+            route = new List<Transform>
+            {
+                wps[4],
+                wps[5],
+                wps[0]
+            };
+        else if (routeNumber == 4)
+            route = new List<Transform>
+            {
+                wps[0],
+                wps[6],
+                wps[7]
             };
 
         //initialise position and waypoint counter
@@ -115,12 +150,12 @@ public class Car : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        rb.constraints = RigidbodyConstraints.FreezePosition;
+        //rb.constraints = RigidbodyConstraints.FreezePosition;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Left Collision");
+        Debug.Log("Not run over person");
 
         rb.constraints = RigidbodyConstraints.None;
     }
