@@ -150,12 +150,14 @@ public class Car : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //rb.constraints = RigidbodyConstraints.FreezePosition;
+        Debug.Log("Collision detected!");
+
+        rb.constraints = RigidbodyConstraints.FreezePosition;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Not run over person");
+        Debug.Log("No collision detected.");
 
         rb.constraints = RigidbodyConstraints.None;
     }
