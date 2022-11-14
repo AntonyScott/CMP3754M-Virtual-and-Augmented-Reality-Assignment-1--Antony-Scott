@@ -14,7 +14,7 @@ public class Car : MonoBehaviour
 
     public Rigidbody rb;
 
-
+    TrafficLights trafficLights;
 
     // Start is called before the first frame update
     void Start()
@@ -87,14 +87,6 @@ public class Car : MonoBehaviour
 
 
 
-    }
-
-    void Update()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            FindObjectOfType<AudioManager>().Play("Car Horn");
-        }
     }
 
     void SetRoute()
