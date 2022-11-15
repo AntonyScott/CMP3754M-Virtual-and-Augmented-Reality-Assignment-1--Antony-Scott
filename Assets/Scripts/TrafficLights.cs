@@ -20,6 +20,9 @@ public class TrafficLights : MonoBehaviour
     public float stateTimer;
     public int state;
 
+    public GameObject trafficLightBlocker1;
+    public GameObject trafficLightBlocker2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,11 @@ public class TrafficLights : MonoBehaviour
         t2red = t2.Find("Red light").gameObject;
         t3green = t3.Find("Green light").gameObject;
         t3red = t3.Find("Red light").gameObject;
+
+        Instantiate(trafficLightBlocker1);
+        Instantiate(trafficLightBlocker2);
+        trafficLightBlocker1.transform.position = new Vector3(3, 1, 7);
+        trafficLightBlocker2.transform.position = new Vector3(-1, 1, -8);
 
         stateTimer = 10.0f;
         SetState(1);

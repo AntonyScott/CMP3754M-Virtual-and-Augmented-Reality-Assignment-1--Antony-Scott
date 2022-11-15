@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pedestrian
+  - Car
+  - Traffic Blocker
+  - TrafficBlocker
   layers:
   - Default
   - TransparentFX

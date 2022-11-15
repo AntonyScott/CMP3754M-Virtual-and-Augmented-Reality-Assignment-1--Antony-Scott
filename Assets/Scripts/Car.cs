@@ -104,21 +104,21 @@ public class Car : MonoBehaviour
     void SetRoute()
     {
         //randomise the next route
-        routeNumber = Random.Range(0, 5);
+        routeNumber = Random.Range(0, 3);
 
         //set the route waypoints
-        if (routeNumber == 0) 
-            route = new List<Transform> 
-            { 
-                wps[0], 
+        if (routeNumber == 0)
+            route = new List<Transform>
+            {
+                wps[0],
                 wps[1],
                 wps[2],
                 wps[3],
             };
-        if (routeNumber == 1) 
-            route = new List<Transform> 
-            { 
-                wps[4], 
+        if (routeNumber == 1)
+            route = new List<Transform>
+            {
+                wps[4],
                 wps[5],
             };
         if (routeNumber == 2)
@@ -128,14 +128,7 @@ public class Car : MonoBehaviour
                 wps[5],
                 wps[1]
             };
-        if (routeNumber == 3)
-            route = new List<Transform>
-            {
-                wps[4],
-                wps[5],
-                wps[0]
-            };
-        else if (routeNumber == 4)
+        else if (routeNumber == 3)
             route = new List<Transform>
             {
                 wps[0],
@@ -150,15 +143,52 @@ public class Car : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision detected!");
+        if (other.gameObject.tag == "Pedestrian")
+        {
+            Debug.Log("Car collision detected with " + other.name + "!");
 
-        rb.constraints = RigidbodyConstraints.FreezePosition;
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+        }
+
+        if (other.gameObject.tag == "Car")
+        {
+            Debug.Log("Car collision detected with another Car!");
+
+            //initialDelay = Random.Range(2.0f, 5.0f);
+            transform.position = new Vector3(0.0f, -1.5f, 0.0f);
+
+            SetRoute();
+        }
+
+        if (other.gameObject.tag == "Traffic Blocker")
+        {
+            Debug.Log("Waiting for traffic light to change!");
+
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("No collision detected.");
+        if(other.gameObject.tag == "Pedestrian")
+        {
+            Debug.Log("Car is no longer colliding with " + other.name + ".");
 
-        rb.constraints = RigidbodyConstraints.None;
+            rb.constraints = RigidbodyConstraints.None;
+        }
+
+        if (other.gameObject.tag == "Car")
+        {
+            Debug.Log("Car is no longer colliding with another Car.");
+
+            Debug.Log("Car respawned!");
+        }
+
+        if (other.gameObject.tag == "Traffic Blocker")
+        {
+            Debug.Log("Light changed to Green!");
+
+            rb.constraints = RigidbodyConstraints.None;
+        }
     }
 }
