@@ -46,7 +46,7 @@ public class Car : MonoBehaviour
         wp = GameObject.Find("CWP8");
         wps.Add(wp.transform);
 
-        initialDelay = Random.Range(2.0f, 5.0f);
+        initialDelay = Random.Range(2.0f, 15.0f);
         transform.position = new Vector3(0.0f, -1.5f, 0.0f);
 
         rb = GetComponent<Rigidbody>();
@@ -154,15 +154,17 @@ public class Car : MonoBehaviour
         {
             Debug.Log("Car collision detected with another Car!");
 
-            //initialDelay = Random.Range(2.0f, 5.0f);
+            /*initialDelay = Random.Range(2.0f, 10.0f);
             transform.position = new Vector3(0.0f, -1.5f, 0.0f);
 
-            SetRoute();
+            SetRoute();*/
+
+            rb.constraints = RigidbodyConstraints.FreezePosition;
         }
 
         if (other.gameObject.tag == "Traffic Blocker")
         {
-            Debug.Log("Waiting for traffic light to change!");
+            Debug.Log("Waiting for traffic light to change! Colliding with " + other.name + ".");
 
             rb.constraints = RigidbodyConstraints.FreezePosition;
         }
@@ -181,12 +183,14 @@ public class Car : MonoBehaviour
         {
             Debug.Log("Car is no longer colliding with another Car.");
 
-            Debug.Log("Car respawned!");
+            rb.constraints = RigidbodyConstraints.None;
+
+            /* Debug.Log("Car respawned!");*/
         }
 
         if (other.gameObject.tag == "Traffic Blocker")
         {
-            Debug.Log("Light changed to Green!");
+            Debug.Log("Light changed to Green! No longer colliding with " + other.name + ".");
 
             rb.constraints = RigidbodyConstraints.None;
         }

@@ -109,7 +109,7 @@ public class PedestrianRoute : MonoBehaviour
                 wps[5],
                 wps[6]
             };
-        else if (routeNumber == 1)
+        if (routeNumber == 1)
             route = new List<Transform>
             {
                 wps[0],
@@ -117,7 +117,7 @@ public class PedestrianRoute : MonoBehaviour
                 wps[5],
                 wps[7]
             };
-        else if (routeNumber == 2)
+        if (routeNumber == 2)
             route = new List<Transform>
             {
                 wps[2],
@@ -126,7 +126,7 @@ public class PedestrianRoute : MonoBehaviour
                 wps[5],
                 wps[6]
             };
-        else if (routeNumber == 3)
+        if (routeNumber == 3)
             route = new List<Transform>
             {
                 wps[2],
@@ -135,7 +135,7 @@ public class PedestrianRoute : MonoBehaviour
                 wps[5],
                 wps[7]
             };
-        else if (routeNumber == 4)
+        if (routeNumber == 4)
             route = new List<Transform>
             {
                 wps[3],
@@ -143,7 +143,7 @@ public class PedestrianRoute : MonoBehaviour
                 wps[5],
                 wps[6],
             };
-        else if (routeNumber == 5)
+        if (routeNumber == 5)
             route = new List<Transform>
             {
                 wps[3],
@@ -151,7 +151,7 @@ public class PedestrianRoute : MonoBehaviour
                 wps[5],
                 wps[7],
             };
-        else if (routeNumber == 6)
+        if (routeNumber == 6)
             route = new List<Transform>
             {
                 wps[6],
@@ -159,7 +159,7 @@ public class PedestrianRoute : MonoBehaviour
                 wps[4],
                 wps[0],
             };
-        else if (routeNumber == 7)
+        if (routeNumber == 7)
             route = new List<Transform>
             {
                 wps[6],
@@ -167,7 +167,7 @@ public class PedestrianRoute : MonoBehaviour
                 wps[4],
                 wps[3],
             };
-        else if (routeNumber == 8)
+        if (routeNumber == 8)
             route = new List<Transform>
             {
                 wps[6],
@@ -175,7 +175,7 @@ public class PedestrianRoute : MonoBehaviour
                 wps[4],
                 wps[0],
             };
-        else if (routeNumber == 9)
+        if (routeNumber == 9)
             route = new List<Transform>
             {
                 wps[7],
@@ -183,7 +183,7 @@ public class PedestrianRoute : MonoBehaviour
                 wps[4],
                 wps[0],
             };
-        else if (routeNumber == 10)
+        if (routeNumber == 10)
             route = new List<Transform>
             {
                 wps[7],

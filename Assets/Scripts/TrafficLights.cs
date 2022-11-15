@@ -22,6 +22,7 @@ public class TrafficLights : MonoBehaviour
 
     public GameObject trafficLightBlocker1;
     public GameObject trafficLightBlocker2;
+    public GameObject trafficLightBlocker3;
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +40,11 @@ public class TrafficLights : MonoBehaviour
 
         Instantiate(trafficLightBlocker1);
         Instantiate(trafficLightBlocker2);
+        Instantiate(trafficLightBlocker3);
+
         trafficLightBlocker1.transform.position = new Vector3(3, 1, 7);
         trafficLightBlocker2.transform.position = new Vector3(-1, 1, -8);
+        trafficLightBlocker3.transform.position = new Vector3(7, 1, -3);
 
         stateTimer = 10.0f;
         SetState(1);
