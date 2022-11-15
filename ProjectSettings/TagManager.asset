@@ -7,7 +7,6 @@ TagManager:
   - Pedestrian
   - Car
   - Traffic Blocker
-  - TrafficBlocker
   layers:
   - Default
   - TransparentFX
