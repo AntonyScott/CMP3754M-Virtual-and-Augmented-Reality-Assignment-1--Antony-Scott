@@ -12303,12 +12303,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 34153738204199879, guid: 8258fdccd226b584b8dc1c7ac1652db0, type: 3}
-      propertyPath: Priority
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 34153738204199879, guid: 8258fdccd226b584b8dc1c7ac1652db0, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8258fdccd226b584b8dc1c7ac1652db0, type: 3}
@@ -15042,12 +15038,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3826245433669573741, guid: 28e6efeab80060a44aeb418ac1f92bce, type: 3}
-      propertyPath: Priority
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 3826245433669573741, guid: 28e6efeab80060a44aeb418ac1f92bce, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28e6efeab80060a44aeb418ac1f92bce, type: 3}
@@ -15112,12 +15104,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7827298885477991565, guid: de53374949c380a43831cdf100ac633d, type: 3}
-      propertyPath: Priority
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 7827298885477991565, guid: de53374949c380a43831cdf100ac633d, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de53374949c380a43831cdf100ac633d, type: 3}
@@ -15182,12 +15170,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690675794886890757, guid: 7ecf74b289b28f246bfea1ee3e275c26, type: 3}
-      propertyPath: Priority
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690675794886890757, guid: 7ecf74b289b28f246bfea1ee3e275c26, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ecf74b289b28f246bfea1ee3e275c26, type: 3}
@@ -15252,12 +15236,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5864419385869164481, guid: ed7795f4883cb97468521311f1be4e22, type: 3}
-      propertyPath: Priority
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 5864419385869164481, guid: ed7795f4883cb97468521311f1be4e22, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed7795f4883cb97468521311f1be4e22, type: 3}
