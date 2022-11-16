@@ -150,6 +150,13 @@ public class Car : MonoBehaviour
             rb.constraints = RigidbodyConstraints.FreezePosition;
         }
 
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Car collision detected with " + other.name + "!");
+
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+        }
+
         if (other.gameObject.tag == "Car")
         {
             Debug.Log("Car collision detected with another Car!");
@@ -173,6 +180,13 @@ public class Car : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.tag == "Pedestrian")
+        {
+            Debug.Log("Car is no longer colliding with " + other.name + ".");
+
+            rb.constraints = RigidbodyConstraints.None;
+        }
+
+        if (other.gameObject.tag == "Player")
         {
             Debug.Log("Car is no longer colliding with " + other.name + ".");
 
